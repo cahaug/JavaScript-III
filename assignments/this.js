@@ -16,7 +16,7 @@
     const sayAge = function(){
         console.log(this.age)
     }
-    const me = {
+    const me1 = {
         age:25
     }
     sayAge();
@@ -51,6 +51,7 @@
         this.type=type
     }
     const zebra = new Animal ('black and white', 'Zachary', 'Zebra');
+    console.log(zebra);
 
     // this is binded to the new object being constructed when the function is invoked with the new keyword
 // code example for New Binding
@@ -70,6 +71,8 @@
     sayName.call(stacey);
     sayName.call(stacey, languages[0], languages[1], languages[2]);
     sayName.apply(stacey, languages);
+    sayName.bind(stacey, languages[0], languages[1], languages[2]);
+
     
     //in this case, using call we are telling the computer explicitly that this is Stacey, using call, apply and bind.
 // code example for Explicit Binding
