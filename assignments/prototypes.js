@@ -52,15 +52,14 @@ CharacterStats.prototype.takeDamage = function(){
   * should inherit destroy() from GameObject through CharacterStats
   * should inherit takeDamage() from CharacterStats
 */
-
+function Child(childAttributes) {
+  Person.call(this, childAttributes); // binding this to Person
+  this.isChild = childAttributes.isChild; // this will be a special attribute to Child
+}
 
 const Humanoid = function(attrs){
-  this.name=attrs.name;
-  this.dimensions=attrs.dimensions;
-  this.healthPoints=attrs.healthPoints;
-  this.createdAt=attrs.createdAt;
-
-
+  GameObject.call(this, attrs);
+  CharacterStats.call(this, attrs);
   this.team=attrs.team;
   this.weapons=attrs.weapons;
   this.language=attrs.language;
